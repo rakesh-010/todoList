@@ -1,0 +1,110 @@
+html {
+  background-color: #e4e9fd;
+  background-image: -webkit-linear-gradient(55deg, #a683e3 50%, #e4e9fd 50%);
+  /* the above is a really simple way of creating a gradient. the first degree is the degree of gradient we want 
+    matlab kitna part forst color rahega and kitna part second color rahega and second one is the percentage of the 
+    different colors.*/
+  min-height: 1000px;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  color: #fff;
+  padding: 10px;
+}
+
+
+
+.box {
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+#heading {
+  background-color: #a683e3;
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+}
+
+.item {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f11d;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+/* this is going to look at all the child items and then going to apply this style to the last child item. */
+
+input:checked + p {
+  text-decoration: line-through;
+  text-decoration-color: #a683e3;
+}
+/* this applies the style to all the p items that are checked. so, we get a purple line because of this. */
+
+input[type="checkbox"] {
+  margin: 20px;
+}
+/* these styles are applied to only the checkbox type input. so it helps us to elect only a particular type of a 
+  particular element */
+
+p {
+  margin: 0;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #00204a;
+}
+
+form.item {
+  text-align: center;
+  margin-left: 20px;
+}
+
+button {
+  min-height: 40px;
+  width: 60px;
+  /* border-radius: 50%; */
+  border-color: transparent;
+  background-color: #a683e3;
+  color: #fff;
+  font-size: 25px;
+  /* padding-bottom: 6px; */
+  border-width: 0;
+  margin-right: 10px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"] {
+  text-align: center;
+  height: 60px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 200;
+  width: 313px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: inset 0 -3px 0 0 #a683e3;
+}
+
+::placeholder {
+  color: grey;
+  opacity: 1;
+}
+/* this is a pseudo selector focussing only on the placeholder we have in out input */
+
+footer {
+  color: white;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}

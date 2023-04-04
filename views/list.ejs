@@ -1,0 +1,55 @@
+<%- include('header'); -%>
+<!-- to include the header file as part of the layout. -->
+
+
+<!-- THERE WILL BE NO SPACE BETWEEN < AND % IN ALL THE TAGS... THAT HAS BEEN DONE FOR KEEPING THEM AS COMMENTS. -->
+
+    <!-- -----------------------------------script tag ----------------------------------------------------  -->
+
+    <div class="box" id="heading">
+      <h1>  <%= listTitle %> </h1> 
+    </div>
+     
+    <!-- this mark up is supposed to be replaced by the value of the written variable which is passed in 
+    the app.js file -->
+
+    <!-- -----------------------------------scriptlet tag ----------------------------------------------------  -->
+
+    <!-- <.% if(kindOfDay==='Saturday'||kindOfDay==='Sunday'){ %>
+    <h1 style="color: red">< %= kindOfDay %> List</h1>
+    < % }else if(kindOfDay=='Monday'){ %>
+    <h1 style="color: green">< %= kindOfDay %> List</h1>
+    < % } else{ %>
+    <h1 style="color: blue">< %= kindOfDay %> List</h1>
+    < % } %> -->
+
+    <!-- this is the scriplet tag... it allows us to write js code for control flow purposes in the ejs 
+    file. So, one condition is that every non html code must start with the "< %" sign shown 
+    above(without space) and end with "%>"-->
+
+    <!-- ------------------- creating the rest of the web page for the to-do list ------------------------------ -->
+    <div class="box">
+
+      <% var x=newItems,i; %>
+      <% newItems.forEach((ele)=>{ %>  <!--a for loop to store each item indivisually that is entered-->
+
+        <form action="/delete" method="post">
+          <div class="item">
+            <input type="checkbox" name="checkbox" value="<%=ele.id%>" onChange="this.form.submit()">
+            <p><%= ele.name%></p>
+          </div>
+          <input type="hidden" name="listName" value="<%= listTitle %>">
+        </form>
+      <%})%>
+      <form action="/" method="post" class="item">
+        <input type="text" name="newItem" placeholder="New item" autocomplete="off">
+        <!-- autocomplete-off means that it won't give a suggestion of what to fill in the box everytime we tap on it. -->
+        <button type="submit" name="list" value="<%= listTitle %>">Add</button>
+        <!-- name: ye wo hai jo hum use karte hai with req.body.____
+        value: ye name mai kya value hoga wo batata hai ye value tag. -->
+      </form>
+      
+    </div>
+
+<%- include('footer'); -%>
+<!-- to include the footer file as part of the layout. -->
